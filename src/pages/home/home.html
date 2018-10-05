@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>
+      QR_Generator
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+<h1 style="margin-top:15px; text-align:center; color:white; text-shadow:0.8px 0.8px 0.8px white;"> QRCode Generator-Detector</h1>
+  <br><br><br><br><br>
+  <div>
+    <ion-label style="text-align:center; color:white; text-shadow:0.8px 0.8px 0.8px white;"> Enter to Generate QRCode </ion-label>
+    <ion-input style="font-size:20px; background-color:white; color:black; cursor:pointer; border-radius:22px 22px 22px 22px; " type="text" [(ngModel)]="encodeText" ></ion-input>
+    <br><br><br><br><br><br>
+    <button  ion-button block (click)="encode()" style=" border-radius:22px 22px 22px 22px; text-shadow:0.8px 0.8px 0.8px white; ">Press to generate QRCode</button>
+  </div>
+  <div><br>
+    <button color="danger" ion-button block (click)="scan()" style="border-radius:22px 22px 22px 22px; text-shadow:0.8px 0.8px 0.8px white; ">Scan your desire QR</button>
+    <div *ngIf="scannedData.text">
+      <ion-label>Your barcode is </ion-label>
+      <br>
+      <span>{{scannedData.text}}</span>
+    </div>
+  </div>
+</ion-content>
